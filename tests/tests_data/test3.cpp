@@ -35,4 +35,19 @@ void process() {
     for (const auto& x : vec) {
         std::cout << x.id;
     }
+
+    for (auto x : vec) {
+        std::cout << x.id;
+    }
+
+    std::vector<const int*> vec_ptrs;
+    for (const int* x : vec_ptrs) {
+        std::cout << *x;
+    }
+
+    for (const auto x : ints) {
+        for (const auto y : vec) {
+            std::cout << x << y.id;
+        }
+    }
 }
