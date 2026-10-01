@@ -1,0 +1,10 @@
+// clang-format off
+
+// Used perf in host system
+1. g++ -O2 -g -fno-omit-frame-pointer tests/tests_data/perf_example.cpp
+2. perf record -g ./a.out
+3. perf report -i perf_heavy.data
+// Repeate steps 1 and 2
+4. perf report
+
+    // clang-format on
