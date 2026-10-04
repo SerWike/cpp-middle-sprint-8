@@ -91,6 +91,9 @@ void RefactorHandler::handle_crange_for(const VarDecl *LoopVar, DiagnosticsEngin
     if (SM.isInSystemHeader(loc))
         return;
 
+    if (LoopVar->getType()->isFundamentalType())
+        return;
+
     Rewrite.InsertTextBefore(loc, "&");
 
     const unsigned DiagID = Diag.getCustomDiagID(DiagnosticsEngine::Remark, "Set '&' in const var in range-for");
