@@ -28,3 +28,28 @@ class Standalone {  // Нет наследников, не меняется
 public:
     ~Standalone() {}
 };
+
+class DifDeclAndDefin
+{
+public:
+    ~DifDeclAndDefin();
+};
+DifDeclAndDefin::~DifDeclAndDefin() {}
+
+class Temp : public DifDeclAndDefin {};
+
+template<typename T>
+class TemplateBase {
+public:
+    ~TemplateBase();
+};
+
+class D1 : public TemplateBase<int> {
+public:
+    ~D1();
+};
+
+class D2 : public TemplateBase<double> {
+public:
+    ~D2();
+};

@@ -29,3 +29,29 @@ class DerivedWithOverride : public BaseWithOverride {
 public:
     void func() override {}  // Уже с override, не меняется
 };
+
+class BaseWithHiding {
+public:
+    void func();
+};
+
+class DerivedWithHiding : public BaseWithHiding {
+public:
+    void func() {};
+};
+
+struct BaseWithoutConst {
+    virtual void func();
+};
+
+struct DerivedWithConst : BaseWithoutConst {
+    void func() const {};
+};
+
+struct PureVirtualBase {
+    virtual void func() = 0;
+};
+
+struct DerivedFromPureVirtual : PureVirtualBase {
+    void func() {};
+};
