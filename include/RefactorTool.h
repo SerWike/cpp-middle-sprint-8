@@ -17,7 +17,6 @@ public:
     // Мы проверяем тип совпадения по bind-именам и применяем рефакторинг.
     virtual void run(const clang::ast_matchers::MatchFinder::MatchResult &Result) override;
 
-private:
     // 1. Невиртуальные деструкторы
     void handle_nv_dtor(const clang::CXXDestructorDecl *Dtor, clang::DiagnosticsEngine &Diag, clang::SourceManager &SM);
 
